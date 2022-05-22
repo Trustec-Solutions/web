@@ -1,0 +1,102 @@
+/* ======================== */
+/* 
+    Ignore the following styles. They are not important to achieve the effect.
+    I'm only using them for looks (overall page background/font styles/centering content).
+*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #151515;
+  color: #151515;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+  height: 100vh;
+}
+
+/* ======================== */
+.jobs a {
+  text-decoration: none;
+}
+
+.jobs a .card {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  color: #fff;
+  text-align: center;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+  padding: 10px;
+  background: var(--background_img) center no-repeat;
+  background-color: #f1853c;
+  background-size: cover;
+  border-radius: 20px;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.jobs a .card .card_content {
+  opacity: 0;
+  -webkit-transition: opacity .25s;
+  transition: opacity .25s;
+}
+
+.jobs a .card .card_content .cart_title {
+  margin-bottom: 15PX;
+  font-weight: bold;
+}
+
+.jobs a .card .card_content .card_description {
+  font-size: 14px;
+}
+
+.jobs a .card::before, .jobs a .card::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: calc(60% + 35px);
+  background-color: #f1853c;
+  -webkit-transition: -webkit-transform 0.5s 0.25s ease-in;
+  transition: -webkit-transform 0.5s 0.25s ease-in;
+  transition: transform 0.5s 0.25s ease-in;
+  transition: transform 0.5s 0.25s ease-in, -webkit-transform 0.5s 0.25s ease-in;
+  z-index: -1;
+}
+
+.jobs a .card::before {
+  top: 0;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 45%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 45%, 0% 100%);
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+.jobs a .card::after {
+  bottom: 0;
+  -webkit-clip-path: polygon(0 55%, 100% 0, 100% 100%, 0% 100%);
+          clip-path: polygon(0 55%, 100% 0, 100% 100%, 0% 100%);
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+}
+
+.jobs a .card:hover::before, .jobs a .card:hover::after {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.jobs a .card:hover .card_content {
+  opacity: 1;
+  -webkit-transition-delay: .75s;
+          transition-delay: .75s;
+}
+/*# sourceMappingURL=index.css.map */

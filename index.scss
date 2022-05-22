@@ -1,0 +1,84 @@
+/* ======================== */
+/* 
+    Ignore the following styles. They are not important to achieve the effect.
+    I'm only using them for looks (overall page background/font styles/centering content).
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #151515;
+    color: #151515;
+    display: grid;
+    place-content: center;
+    height: 100vh;
+}
+
+/* ======================== */
+.jobs{
+  a{
+    text-decoration: none;
+    .card {
+      position: relative;
+      width: 250px;
+      height: 250px;
+      color: #fff;
+      text-align: center;
+      display: grid;
+      place-content: center;
+      padding: 10px;
+      background: var(--background_img) center no-repeat;
+      background-color: #f1853c;
+      background-size: cover;
+      border-radius: 20px;
+      z-index: 1;
+      overflow: hidden;
+      .card_content{
+        opacity: 0;
+        transition: opacity .25s;
+        .cart_title{
+          margin-bottom: 15PX;
+          font-weight: bold;
+        }
+        .card_description{
+          font-size: 14px;
+        }
+      }
+      &::before, &::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: calc(60% + 35px);
+        background-color: #f1853c;
+        transition: transform .5s.25s ease-in;
+        z-index: -1;
+      }
+      &::before{
+        top: 0;
+        clip-path: polygon(0 0, 100% 0, 100% 45%, 0% 100%);
+        transform: translateY(-100%);
+      }
+      &::after{
+        bottom: 0;
+        clip-path: polygon(0 55%, 100% 0, 100% 100%, 0% 100%);
+        transform: translateY(100%);
+      }
+      &:hover{
+        &::before, &::after{
+          transform: translateY(0);
+        }
+        .card_content{
+          opacity: 1;
+          transition-delay: .75s;
+        }
+      } 
+    }
+  }
+}
