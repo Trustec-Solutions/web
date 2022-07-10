@@ -38,7 +38,7 @@ body {
   padding: 10px;
   background: var(--background_img) center no-repeat;
   background-color: #f1853c;
-  background-size: cover;
+  background-size: contain;
   border-radius: 20px;
   z-index: 1;
   overflow: hidden;
